@@ -1,4 +1,5 @@
-#This is a client script meant to check the TCP connection with its server and return a result
+#This is a client script meant to check the TCP connection with its server and if a connection exist, then the a message is sent to the srever.
+#This applies for any client in the client-server architecture that wishes to check its connectivity with the server
 import socket
 import sys
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -6,9 +7,9 @@ output1 = "OK, CONNECTION SUCCEEDED"
 output2 ="NOT OK, CONNECTION FAILED"
 
 def check_tcp_connection(IP):#This defines the function that connects the client to the server.The function has as parameter the IP of the server
-    port = 8443
+    port = 80  
     try:
-        client.connect(('IP', port))
+        client.connect(('IP', port))#The IP and port of server 
         return output1 
     except socket.error:
         return output2 
