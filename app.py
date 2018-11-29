@@ -11,7 +11,7 @@ def check_tcp_connection(IP):
         return output1 
     except socket.error:
         return output2 
-check_tcp_connection('42.206.4.219')
+check_tcp_connection('0.0.0.0')
 
 
 def test_case(IP):
@@ -19,7 +19,7 @@ def test_case(IP):
         print ("Checking the connectivity......................................OK! CONNECTION SUCCEEDED")
     else:
         print("Checking the connectivity......................................NOT OK! CONNECTION FAILED")
-test_case('42.206.4.219')
+test_case('0.0.0.0')
 
 
 def send_sms(IP):
@@ -28,7 +28,7 @@ def send_sms(IP):
         client.sendall(message)
     except:
         print ("ERROR IN SENDING MESSAGE")
-send_sms('42.206.4.219')
+send_sms('0.0.0.0')
 
 
 
